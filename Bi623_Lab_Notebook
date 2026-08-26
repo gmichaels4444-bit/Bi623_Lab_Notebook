@@ -7,7 +7,71 @@ location:
 
 Part 2:
 Used information from manuals to install sratoolkit.3.4.1-alma_linux64 (linux for Talapas)
-Saved 
+Summarized prefetch slurm output:
+2026-08-26T00:02:04 prefetch.3.4.1: 1) Resolving 'SRR11722023'...
+2026-08-26T00:02:05 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-08-26T00:02:06 prefetch.3.4.1: 1) Downloading 'SRR11722023'...
+2026-08-26T00:02:06 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-08-26T00:02:06 prefetch.3.4.1:  Downloading via HTTPS...
+2026-08-26T00:02:06 prefetch.3.4.1:    Continue download of 'SRR11722023' from 482089616
+2026-08-26T00:14:18 prefetch.3.4.1:  HTTPS download succeed
+2026-08-26T00:14:29 prefetch.3.4.1:  'SRR11722023' is valid: 5811840405 bytes were resumed from 482089616
+2026-08-26T00:14:29 prefetch.3.4.1: 1) 'SRR11722023' was downloaded successfully
+2026-08-26T00:14:29 prefetch.3.4.1: 1) Resolving 'SRR11722023's dependencies...
+2026-08-26T00:14:29 prefetch.3.4.1: 'SRR11722023' has 0 unresolved dependencies
+	Command being timed: "prefetch SRR11722023 --max-size 420000000000"
+	User time (seconds): 44.62
+	System time (seconds): 6.41
+	Percent of CPU this job got: 6%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:24.78
+2026-08-26T00:14:29 prefetch.3.4.1: 1) Resolving 'SRR1302052'...
+2026-08-26T00:14:30 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-08-26T00:14:31 prefetch.3.4.1: 1) Downloading 'SRR1302052'...
+2026-08-26T00:14:31 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-08-26T00:14:31 prefetch.3.4.1:  Downloading via HTTPS...
+2026-08-26T00:14:31 prefetch.3.4.1:    Continue download of 'SRR1302052' from 254587519
+2026-08-26T01:43:53 prefetch.3.4.1:  HTTPS download succeed
+2026-08-26T01:43:53 prefetch.3.4.1:   verifying 'SRR1302052'...
+2026-08-26T01:44:55 prefetch.3.4.1:  'SRR1302052' is valid: 37462213054 bytes were resumed from 254587519
+2026-08-26T01:44:55 prefetch.3.4.1: 1) 'SRR1302052' was downloaded successfully
+2026-08-26T01:44:55 prefetch.3.4.1: 1) Resolving 'SRR1302052's dependencies...
+2026-08-26T01:44:55 prefetch.3.4.1: 'SRR1302052' has 0 unresolved dependencies
+	Command being timed: "prefetch SRR1302052 --max-size 420000000000"
+	User time (seconds): 303.73
+	System time (seconds): 45.00
+	Percent of CPU this job got: 6%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:30:26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 98976
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 26294
+
+Summarized fasterq-dump SLURM output:
+spots read      : 52,844,920
+reads read      : 105,689,840
+reads written   : 105,689,840
+	Command being timed: "fasterq-dump SRR11722023"
+	User time (seconds): 214.57
+	System time (seconds): 29.08
+	Percent of CPU this job got: 376%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:04.70
+spots read      : 300,773,959
+reads read      : 601,547,918
+reads written   : 601,547,918
+	Command being timed: "fasterq-dump SRR1302052"
+	User time (seconds): 1038.92
+	System time (seconds): 121.13
+	Percent of CPU this job got: 300%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:26.55
+
+gzipped each resulting fastq file
+Files are paired end reads from each .sra file.
+
+
 
 
 

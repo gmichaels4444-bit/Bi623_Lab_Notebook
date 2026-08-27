@@ -73,7 +73,7 @@ reads written   : 601,547,918
 gzipped each resulting fastq file
 		pigz would have been faster and more efficient
 Files are paired end reads from each .sra file.
-Pulled values for ans
+Pulled values for answers file from slurm outputs.
 
 
 

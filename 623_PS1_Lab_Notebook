@@ -1,0 +1,24 @@
+ICA2:
+
+Copied and pasted variables from q1 to q2
+
+
+
+
+PS1:
+File location:
+/projects/bgmp/gmich/bioinfo/Bi621/PS/gmichaels4444-bit-Bi621-PS7
+
+Software info:
+Python version 3.14
+BLASTp version 2.17.0+
+location:
+/projects/bgmp/gmich/bioinfo/Bi621/PS/gmichaels4444-bit-Bi621-PS7
+
+Format of input files for pseudocode:
+https://www.metagenomics.wiki/tools/blast/blastn-output-format-6
+
+
+Noted that Outputs (Spp_query_spp2_db) are already sorted by protein and by lowest to highest evalue by default
+Will pull first line for each new protein to capture lowest evalue line
+

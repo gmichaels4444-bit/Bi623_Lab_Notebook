@@ -1,9 +1,11 @@
 ICA1:
 Python version 3.14
-R version 
 location:
 /projects/bgmp/gmich/bioinfo/Bi621/PS/gmichaels4444-bit-Bi623-ICA1
 
+Part 1:
+
+https://www.ncbi.nlm.nih.gov/datasets/gene/
 
 Part 2:
 Used information from manuals to install sratoolkit.3.4.1-alma_linux64 (linux for Talapas)

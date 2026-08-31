@@ -1,10 +1,3 @@
-ICA2:
-
-Copied and pasted variables from q1 to q2
-
-
-
-
 PS1:
 File location:
 /projects/bgmp/gmich/bioinfo/Bi621/PS/gmichaels4444-bit-Bi621-PS7
@@ -21,4 +14,23 @@ https://www.metagenomics.wiki/tools/blast/blastn-output-format-6
 
 Noted that Outputs (Spp_query_spp2_db) are already sorted by protein and by lowest to highest evalue by default
 Will pull first line for each new protein to capture lowest evalue line
+
+
+Situations accounted for in test files:
+Not saved=not output to expected_outputs.tsv
+Saved=RBH saved to expected_outputs.tsv
+
+Matched lowest scores (RBH, saved)
+Matches where only 1 pairing was a best hit and the other file was not (Not saved)
+tied reciprocal best hits that were duplicates (Saved only unique entry)
+tied reciprocal best hits that were not duplicates (both not saved)
+3-way tie between duplicates and a pairing that was not a best hit (not saved)
+
+Filled expected output files with pairings
+Found gene IDs and names for matched proteins using
+cat <human or zebrafish>_mart_export.txt | grep <protein ID>
+
+
+
+
 

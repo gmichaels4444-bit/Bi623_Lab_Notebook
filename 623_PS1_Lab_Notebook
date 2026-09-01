@@ -125,3 +125,46 @@ Human_Zebrafish: 7960
 SLight error, removing entries unnecessarily
 
 found bug; check for duplicates was treating nothing as duplicates since it was matching database protein to e-calue, not prior database protein.
+
+	Command being timed: "./PS1_RBH.py -rf Human_query_Zfish_db -mf Zfish_query_Human_db -rg /projects/bgmp/shared/Bi623/PS1/biomart/Hsa_biomart_v116.txt -mg /projects/bgmp/shared/Bi623/PS1/biomart/Dre_biomart_v116.txt -o Human_Zebrafish_RBH_sorted.tsv"
+	User time (seconds): 3.22
+	System time (seconds): 0.37
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.74
+	Command being timed: "./PS1_RBH.py -rf /projects/bgmp/shared/Bi623/PS1/blasthits/Hsa_query_Eel_db.txt -mf /projects/bgmp/shared/Bi623/PS1/blasthits/Eel_query_Hsa_db.txt -rg /projects/bgmp/shared/Bi623/PS1/biomart/Hsa_biomart_v116.txt -mg /projects/bgmp/shared/Bi623/PS1/biomart/Eel_biomart_v116.txt -o Human_ElectricEel_RBH.tsv"
+	User time (seconds): 1.94
+	System time (seconds): 0.16
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.12
+	Command being timed: "./PS1_RBH.py -rf /projects/bgmp/shared/Bi623/PS1/blasthits/Hsa_query_Pka_db.txt -mf /projects/bgmp/shared/Bi623/PS1/blasthits/Pka_query_Hsa_db.txt -rg /projects/bgmp/shared/Bi623/PS1/biomart/Hsa_biomart_v116.txt -mg /projects/bgmp/shared/Bi623/PS1/biomart/Pka_biomart_v116.txt -o Human_ElectricBabyWhale_RBH.tsv"
+	User time (seconds): 2.10
+	System time (seconds): 0.21
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.32
+	Command being timed: "./PS1_RBH.py -rf /projects/bgmp/shared/Bi623/PS1/blasthits/Dre_query_Eel_db.txt -mf /projects/bgmp/shared/Bi623/PS1/blasthits/Eel_query_Dre_db.txt -rg /projects/bgmp/shared/Bi623/PS1/biomart/Dre_biomart_v116.txt -mg /projects/bgmp/shared/Bi623/PS1/biomart/Eel_biomart_v116.txt -o Zebrafish_ElectricEel_RBH.tsv"
+	User time (seconds): 2.27
+	System time (seconds): 0.17
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.46
+	Command being timed: "./PS1_RBH.py -rf /projects/bgmp/shared/Bi623/PS1/blasthits/Dre_query_Pka_db.txt -mf /projects/bgmp/shared/Bi623/PS1/blasthits/Pka_query_Dre_db.txt -rg /projects/bgmp/shared/Bi623/PS1/biomart/Dre_biomart_v116.txt -mg /projects/bgmp/shared/Bi623/PS1/biomart/Pka_biomart_v116.txt -o Zebrafish_ElectricBabyWhale_RBH.tsv"
+	User time (seconds): 2.57
+	System time (seconds): 0.18
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.77
+	Command being timed: "./PS1_RBH.py -rf /projects/bgmp/shared/Bi623/PS1/blasthits/Eel_query_Pka_db.txt -mf /projects/bgmp/shared/Bi623/PS1/blasthits/Pka_query_Eel_db.txt -rg /projects/bgmp/shared/Bi623/PS1/biomart/Eel_biomart_v116.txt -mg /projects/bgmp/shared/Bi623/PS1/biomart/Pka_biomart_v116.txt -o ElectricEel_ElectricBabyWhale_RBH.tsv"
+	User time (seconds): 1.51
+	System time (seconds): 0.12
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.65
+
+wc -l *_RBH.tsv
+  10662 ElectricEel_ElectricBabyWhale_RBH.tsv
+   9035 Human_ElectricBabyWhale_RBH.tsv
+   9022 Human_ElectricEel_RBH.tsv
+   7961 Human_Zebrafish_RBH.tsv
+   9341 Zebrafish_ElectricBabyWhale_RBH.tsv
+  10185 Zebrafish_ElectricEel_RBH.tsv
+  56206 total
+Matches the output of others.
+
+Answered questions and uploaaded to github.

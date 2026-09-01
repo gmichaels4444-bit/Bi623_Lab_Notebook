@@ -30,7 +30,21 @@ Filled expected output files with pairings
 Found gene IDs and names for matched proteins using
 cat <human or zebrafish>_mart_export.txt | grep <protein ID>
 
+For writing real code from pseudocode:
+added argparse for 4 input files and output file
+genericized from human and zfish to s1 and s2 to be accurate for any species combination
 
 
+encountered error when running initial script:
+TypeError: 'tuple' object does not support item assignment
+dictionary used tuples as values instead of lists, so flag strategy did not work, therefore switched to lists 
+slurm-46954102.out
+
+Initial run after typo and type corrections:
+Command being timed: "./PS1_RBH.py -rf ./rbh_tests/Hq_Zd_test.tsv -mf ./rbh_tests/Zq_Hd_test.tsv -rg human_mart_export.txt -mg zebrafish_mart_export.txt -o ./rbh_tests/test_output"
+	User time (seconds): 0.36
+	System time (seconds): 0.03
+	Percent of CPU this job got: 93%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.42
 
 

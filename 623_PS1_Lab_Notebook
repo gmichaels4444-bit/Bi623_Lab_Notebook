@@ -77,6 +77,39 @@ wc -l Hsa_Dre_RBH_sorted.tsv
 14819 Hsa_Dre_RBH_sorted.tsv (still ~2x longer than others' files; sorting likely not the issue)
 
 May have foregotten to add RECIPROCAL best hits line to final loop:
-if s2_protdict[s1_protdict[qprot][0]]==qprot: (if the matched protein from the first file is the key in the second dictionary with a value of the original query protein)
-	may make other code redundant, to check with professors.
-	for now, replaces if key in dictionary line
+if s2_protdict[s1_protdict[qprot][0]][0]==qprot: (if the matched protein from the first file is the key in the second dictionary with a value of the original query protein)
+	may make other code redundant, to check with professors
+			tried replacing if key in s2_protdict line, but threw errors
+Command being timed: "./PS1_RBH.py -rf Human_query_Zfish_db -mf Zfish_query_Human_db -rg human_mart_export.txt -mg zebrafish_mart_export.txt -o Hsa_Dre_RBH.tsv"
+	User time (seconds): 3.20
+	System time (seconds): 0.22
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.44
+wc -l Hsa_Dre_RBH.tsv
+7961 Hsa_Dre_RBH.tsv
+This matches others' final file length
+Renamed this file to match expected name
+	"Human_Zebrafish_RBH.tsv"
+
+Made batch script for all combinations:
+slurm-46992928.out
+No output; all had key errors on first run through of output writing line in script
+wc -l *_RBH.tsv
+     1 Human_ElectricBabyWhale_RBH.tsv
+     1 Human_ElectricEel_RBH.tsv
+  7961 Human_Zebrafish_RBH.tsv
+     1 Zebrafish_ElectricBabyWhale_RBH.tsv
+     1 Zebrafish_ElectricEel_RBH.tsv
+  7965 total
+
+______order of reference mart files is different; need to rewrite script to account for this___
+genedict splitline order:
+[0] is protein stable ID
+[1] is gene stable ID
+[2] is gene name
+
+
+ran with 
+
+
+found bug; check for duplicates was treating nothing as duplicates since it was matching database protein to e-calue, not prior database protein.

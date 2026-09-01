@@ -48,3 +48,35 @@ Command being timed: "./PS1_RBH.py -rf ./rbh_tests/Hq_Zd_test.tsv -mf ./rbh_test
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.42
 
 
+Ran on actual files:
+Command being timed: "./PS1_RBH.py -rf Human_query_Zfish_db -mf Zfish_query_Human_db -rg human_mart_export.txt -mg zebrafish_mart_export.txt -o Hsa_Dre_RBH.tsv"
+	User time (seconds): 3.22
+	System time (seconds): 0.34
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 152612
+wc -l Hsa_Dre_RBH.tsv
+12947 Hsa_Dre_RBH.tsv
+Output was 2x too long, Zfish repeats not properly removed
+
+- sorted files and ran again
+sort commands:
+sort -n -k 11 Human_query_Zfish_db | sort -k 1 > sorted_Human_query_Zfish_db.txt
+diff Human_query_Zfish_db sorted_Human_query_Zfish_db.txt 
+	showed significant differences, but unclear if this was due to protein order being changed
+	visually appeared to be correctly sorted
+ sort -n -k 11 Zfish_query_Human_db | sort -k 1 > sorted_Zfish_query_Human_db.txt
+
+reran python script on sorted files
+/usr/bin/time -v ./PS1_RBH.py -rf sorted_Human_query_Zfish_db.txt -mf sorted_Zfish_query_Human_db.txt -rg human_mart_export.txt -mg zebrafish_mart_export.txt -o Hsa_Dre_RBH_sorted.tsv
+wc -l Hsa_Dre_RBH_sorted.tsv
+14819 Hsa_Dre_RBH_sorted.tsv (still ~2x longer than others' files; sorting likely not the issue)
+
+May have foregotten to add RECIPROCAL best hits line to final loop:
+if s2_protdict[s1_protdict[qprot][0]]==qprot: (if the matched protein from the first file is the key in the second dictionary with a value of the original query protein)
+	may make other code redundant, to check with professors.
+	for now, replaces if key in dictionary line

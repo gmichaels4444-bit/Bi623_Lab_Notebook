@@ -28,6 +28,10 @@ Downloaded and viewed output html files on browser
 Part 2:
 issue with pixi, had to delete all pixi files and reinstall
 
+pixi add <thing to be installed>
+<installed thing> -- version
+added packages for part 3 as well
+
 due to python issues:
 cutadapt
 HTSeq

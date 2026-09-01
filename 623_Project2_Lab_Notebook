@@ -1,1 +1,15 @@
+{include info on installing environment}
+
+Created pixi environment under "Project2_QAA" folder
+  put git repo inside of this folder in order to have access to pixi environment
+
+pixi add <thing to be installed>
+<installed thing> -- version
+
+
+
+
+
+
+
 

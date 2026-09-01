@@ -1,4 +1,13 @@
-{include info on installing environment}
+Location:
+/projects/bgmp/gmich/bioinfo/Bi623/Project2_QAA/Project-2-Electric-organ-RNA-seq-analysis
+
+Software versions:
+python = ">=3.14.7,<3.15"
+trimmomatic = ">=0.41,<0.42"
+fastqc = ">=0.12.1,<0.13"
+
+
+
 
 Created pixi environment under "Project2_QAA" folder
   put git repo inside of this folder in order to have access to pixi environment
@@ -8,6 +17,20 @@ pixi add <thing to be installed>
 
 
 
+
+
+pixi run /usr/bin/time fastqc SRR25630307_1.fastq SRR25630307_2.fastq -o Project-2-Electric-organ-RNA-seq-analysis/
+pixi run /usr/bin/time fastqc SRR25630395_1.fastq SRR25630395_2.fastq -o Project-2-Electric-organ-RNA-seq-analysis/
+
+Downloaded and viewed output html files on browser
+
+
+Part 2:
+issue with pixi, had to delete all pixi files and reinstall
+
+due to python issues:
+cutadapt
+HTSeq
 
 
 

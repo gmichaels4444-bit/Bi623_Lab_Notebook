@@ -110,6 +110,18 @@ genedict splitline order:
 
 
 ran with 
+wc -l of <RBH.tsv> -1 for header line
+wc -l *_RBH.tsv (-1 for header line)
 
+Human_Zebrafish: 7960 
+
+ 10660 ElectricEel_ElectricBabyWhale_RBH.tsv   1 too few
+   9030 Human_ElectricBabyWhale_RBH.tsv 5 too few
+   9020 Human_ElectricEel_RBH.tsv  2 too few
+   7961 Human_Zebrafish_RBH.tsv correct
+   9339 Zebrafish_ElectricBabyWhale_RBH.tsv 2 too few
+  10182 Zebrafish_ElectricEel_RBH.tsv 3 too few
+  56192 total
+SLight error, removing entries unnecessarily
 
 found bug; check for duplicates was treating nothing as duplicates since it was matching database protein to e-calue, not prior database protein.

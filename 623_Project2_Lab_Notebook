@@ -54,7 +54,21 @@ Changed parameters and removed ILLUMINACLIP parameter, since reads were already 
 Error: Unable to access jarfile Trimmomatic-0.41.jar
 Command exited with non-zero status 1
 	Command being timed: "java -jar Trimmomatic-0.41.jar PE ../cut_SRR25630307_1.fastq.gz ../cut_SRR25630307_2.fastq.gz ../paired_SRR25630307_1.fastq.gz ../unpaired_SRR25630307_1.fastq.gz ../paired_SRR25630307_2.fastq.gz ../unpaired_SRR25630307_2.fastq.gz LEADING:3 TRAILING:3 SLIDINGWINDOW:5:15 MINLEN:35"
-Tried using "pixi run trimmomatic" after this, which ran:
+Tried using "pixi run trimmomatic" after this, which ran successfully:
+
+
+
+However, cutadapt was not run with paired end setting, so I reran that first. 
+
+
+############
+
+put in cutadapt and trimmomatic info
+
+
+##############
+
+
 
 
 

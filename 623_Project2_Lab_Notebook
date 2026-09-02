@@ -2,17 +2,20 @@ Location:
 /projects/bgmp/gmich/bioinfo/Bi623/Project2_QAA/Project-2-Electric-organ-RNA-seq-analysis
 
 Software versions:
-python = ">=3.14.7,<3.15"
+cutadapt = ">=5.2,<6"
 trimmomatic = ">=0.41,<0.42"
+htseq = ">=2.1.2,<3"
 fastqc = ">=0.12.1,<0.13"
-
+star = ">=2.7.11b,<3"
+samtools = ">=1.23.1,<2"
+numpy = ">=2.5.2,<3"
+matplotlib = ">=3.11.1,<4"
 
 Created pixi environment under "Project2_QAA" folder
   put git repo inside of this folder in order to have access to pixi environment
 
 pixi add <thing to be installed>
 <installed thing> -- version
-
 
 pixi run /usr/bin/time fastqc SRR25630307_1.fastq SRR25630307_2.fastq -o Project-2-Electric-organ-RNA-seq-analysis/
 pixi run /usr/bin/time fastqc SRR25630395_1.fastq SRR25630395_2.fastq -o Project-2-Electric-organ-RNA-seq-analysis/
@@ -27,9 +30,35 @@ pixi add <thing to be installed>
 <installed thing> -- version
 added packages for part 3 as well
 
-due to python issues:
-cutadapt
-HTSeq
+cutadapt and HTSeq had issues with installing; had to delete and reinstall pixi environment
+
+Cutadapt and trimmomatic might be multithreaded, give them 8 cores
+
+cutadapt documentation:
+https://cutadapt.readthedocs.io/en/stable/guide.html
+
+Used default parameters and Illumina Adapter sequences; output files as zipped to save space
+
+7. 
+Based off of:
+https://github.com/usadellab/Trimmomatic/blob/main/README.md#simplified-invocation-v041
+
+java -jar Trimmomatic-0.41.jar PE \
+input_forward.fq.gz input_reverse.fq.gz \
+output_forward_paired.fq.gz output_forward_unpaired.fq.gz \
+output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz \
+ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+
+Changed parameters and removed ILLUMINACLIP parameter, since reads were already trimmed
+
+Error: Unable to access jarfile Trimmomatic-0.41.jar
+Command exited with non-zero status 1
+	Command being timed: "java -jar Trimmomatic-0.41.jar PE ../cut_SRR25630307_1.fastq.gz ../cut_SRR25630307_2.fastq.gz ../paired_SRR25630307_1.fastq.gz ../unpaired_SRR25630307_1.fastq.gz ../paired_SRR25630307_2.fastq.gz ../unpaired_SRR25630307_2.fastq.gz LEADING:3 TRAILING:3 SLIDINGWINDOW:5:15 MINLEN:35"
+Tried using "pixi run trimmomatic" after this, which ran:
+
+
+
+
 
 
 

@@ -168,3 +168,6 @@ wc -l *_RBH.tsv
 Matches the output of others.
 
 Answered questions and uploaded to github.
+
+Rearranged files in github into folder for PS1
+Running rerunning batch script will require edits to relative paths

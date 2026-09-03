@@ -134,7 +134,25 @@ Overall patterns were similar, with final files no longer having adapter sequenc
 
 
 Part 3:
+Already installed packages at the beginning of part 2
 
+Used code from Bi621 PS8 for STAR alignment and file path formatting
+
+Converted .gff to .gtf
+agat_convert_sp_gff2gtf.pl --gff campylomormyrus.gff -o campylomormyrus.gtf
+Took ~20 minutes
+output looks like a gtf file
+
+
+
+For STAR alignment, followed the same commands as Bi621 PS8 
+
+Had to run with 32 CPUs; memory issues otherwise
+
+Output 2 .sam
+
+Mapped_counts.py adapted from PS8, with argparse added
+	removed filtering parameter i"f "K" in line"
 
 
 

@@ -155,6 +155,11 @@ Mapped_counts.py adapted from PS8, with argparse added
 	removed filtering parameter i"f "K" in line"
 
 
+For HTSEQ command:
+-c for output file did not work, put ><outfile>
+
+
+
 
 
 

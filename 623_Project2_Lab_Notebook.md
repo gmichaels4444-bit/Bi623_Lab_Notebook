@@ -158,6 +158,17 @@ Mapped_counts.py adapted from PS8, with argparse added
 For HTSEQ command:
 -c for output file did not work, put ><outfile>
 
+counting reads from htseq:
+sort <filename> | grep "ENSMUS" | awk '{sum+=$2}END{print sum}'
+
+
+
+
+
+Renamed files to:
+counts_SRR25630307_<forward or reverse>.txt became	Cco_com124_EO_6cm_1_htseqcounts_[forORrev]stranded.txt
+counts_SRR25630395_<forward or reverse>.txt became Crh_rhy115_EO_adult_2_htseqcounts_[forORrev]stranded.txt
+
 
 
 

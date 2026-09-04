@@ -74,7 +74,8 @@ Command being timed: "./Project1_pt1.py -f /projects/bgmp/shared/Bi623/ZoonomiaW
 
 wc -l PhyloP_RoCC_output.txt 
 595535 PhyloP_RoCC_output.txt
-1 line shorter than classmates' files
+1 line shorter than classmates' files; but no header
+
 
 
 

@@ -63,7 +63,23 @@ Command being timed: "sort -k4,4gr -k1,1V -k2,2gr PhyloP_RoCC_output.txt"
 	Average total size (kbytes): 0
 	Maximum resident set size (kbytes): 48776
 
-Count slightly off (~500 too few RoCCs), set phylopP >= 2.27 (previously just >
+Count slightly off (~500 too few RoCCs), set phylopP >= 2.27 (previously just >)
+
+Command being timed: "./Project1_pt1.py -f /projects/bgmp/shared/Bi623/ZoonomiaWorkshop/241-mammalian-2020v2.bigWigToBedGraph.gz -l 20 -o PhyloP_RoCC_output.txt"
+	User time (seconds): 1655.52
+	System time (seconds): 7.45
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 27:48.54
+	Average shared text size (kbytes): 0
+
+wc -l PhyloP_RoCC_output.txt 
+595535 PhyloP_RoCC_output.txt
+1 line shorter than classmates' files
+
+
+
+
+
 	
 Part 2
 

@@ -74,8 +74,11 @@ Command being timed: "./Project1_pt1.py -f /projects/bgmp/shared/Bi623/ZoonomiaW
 
 wc -l PhyloP_RoCC_output.txt 
 595535 PhyloP_RoCC_output.txt
-1 line shorter than classmates' files; but no header
+1 line shorter than classmates' files; but actual file has 1 more line
 
+wc -l PhyloP_RoCC_output_sorted.txt 
+595536 PhyloP_RoCC_output_sorted.txt
+correct length, properly sorted
 
 
 

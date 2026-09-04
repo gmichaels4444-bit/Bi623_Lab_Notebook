@@ -63,6 +63,7 @@ Command being timed: "sort -k4,4gr -k1,1V -k2,2gr PhyloP_RoCC_output.txt"
 	Average total size (kbytes): 0
 	Maximum resident set size (kbytes): 48776
 
+Count slightly off (~500 too few RoCCs), set phylopP >= 2.27 (previously just >
 	
 Part 2
 

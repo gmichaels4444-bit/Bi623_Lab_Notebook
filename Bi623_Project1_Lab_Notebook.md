@@ -36,12 +36,34 @@ Command being timed: "./Project1_pt1.py -f test.tsv -l 2 -o testout.tsv"
 
 Changed to gzip.open for zipped file and ran on full file with minimum RoCC length of 20:
 
+Command being timed: "./Project1_pt1.py -f /projects/bgmp/shared/Bi623/ZoonomiaWorkshop/241-mammalian-2020v2.bigWigToBedGraph.gz -l 20 -o PhyloP_RoCC_output.txt"
+	User time (seconds): 1698.59
+	System time (seconds): 7.40
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 28:31.55
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	
+wc -l PhyloP_RoCC_output.txt 
+595077 PhyloP_RoCC_output.txt
+Unsorted
 
+Sorted using bash commands:
+sorted largest to smallest RoCCs, with a tiebreaker of chromosome (1-22, then X, then Y), and a final tiebreaker of start base number (highest to lowest, per Hope) 
 
+sort -V for version numbers works for chr number, including X and Y
+Command being timed: "sort -k4,4gr -k1,1V -k2,2gr PhyloP_RoCC_output.txt"
+	User time (seconds): 5.83
+	System time (seconds): 0.02
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.99
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48776
 
-
-
-
+	
 Part 2
 
 Plotting: Used R on Talapas: https://ondemand.talapas.uoregon.edu/pun/sys/dashboard/batch_connect/sys/rstudio/session_contexts/new With Talapas R module, most recent R, and settled on 2-4h upon resetting

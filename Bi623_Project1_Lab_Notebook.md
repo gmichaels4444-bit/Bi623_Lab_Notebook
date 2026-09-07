@@ -88,3 +88,8 @@ correct length, properly sorted
 Part 2
 
 Plotting: Used R on Talapas: https://ondemand.talapas.uoregon.edu/pun/sys/dashboard/batch_connect/sys/rstudio/session_contexts/new With Talapas R module, most recent R, and settled on 2-4h upon resetting
+
+Downloaded file onto personal computer for R plotting:
+scp gmich@login.talapas.uoregon.edu:/projects/bgmp/shared/Bi623/ZoonomiaWorkshop/variant_summary.txt.gz /gmichaels/Downloads
+
+

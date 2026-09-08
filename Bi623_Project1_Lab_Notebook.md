@@ -87,9 +87,25 @@ correct length, properly sorted
 	
 Part 2
 
-Plotting: Used R on Talapas: https://ondemand.talapas.uoregon.edu/pun/sys/dashboard/batch_connect/sys/rstudio/session_contexts/new With Talapas R module, most recent R, and settled on 2-4h upon resetting
+For R on Talapas: https://ondemand.talapas.uoregon.edu/pun/sys/dashboard/batch_connect/sys/rstudio/session_contexts/new With Talapas R module, most recent R, and settled on 2-4h upon resetting
+
+For initial testing, downloaded onto personal computer and ran locally
 
 Downloaded file onto personal computer for R plotting:
 scp gmich@login.talapas.uoregon.edu:/projects/bgmp/shared/Bi623/ZoonomiaWorkshop/variant_summary.txt.gz /gmichaels/Downloads
 
+gzcat used for initial file exploration, found file contains headers
+
+Used read_tsv() after read.table() had issues with header and NAs
+	consider using fread in the future
+Steps for parsing data:
+1. Filtered for each condition
+2. selected desired columns
+3. sorted using arrange()(had to make vector to sort by for chromosome column, likely more efficient way of accomplishing this),
+4. mutated chromosome column to match part 1 output using paste0()
+5. Output file written out as tsv; 226 lines matched classmates' output.
+
+Initially had ~2x larger output when filtering for "Cranio" and ignoring case, but changed to specifically uppercase first letter to match consensus output
+
+Part 3:
 

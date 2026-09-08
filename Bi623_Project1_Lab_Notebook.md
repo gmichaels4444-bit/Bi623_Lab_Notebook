@@ -4,6 +4,8 @@ File location:
 
 Software info:
 Python version 3.14 (Pixi installed)
+bedtools version 2.31.1
+
 
 Part 1:
 phyloP file:
@@ -83,7 +85,6 @@ correct length, properly sorted
 
 
 
-
 	
 Part 2
 
@@ -108,4 +109,31 @@ Steps for parsing data:
 Initially had ~2x larger output when filtering for "Cranio" and ignoring case, but changed to specifically uppercase first letter to match consensus output
 
 Part 3:
+pixi add bedtools
+
+https://bedtools.readthedocs.io/en/latest/content/tools/multiinter.html
+used for developing command
+
+Added header, abbreviations for each file for easier header reading
+output to "part3_bedtools_output.tsv"
+
+Used initial output for part1, since sorting of file from python before bash sorting matches desired pattern for bedtools multiinter
+Removed header from Cranio_variants_sorted.tsv using:
+```tail -n +2 Cranio_variants_sorted.tsv > prepped_Cranio_variants_sorted.tsv```
+
+WARN cache for Repodata at /home/gmich/.cache/rattler/cache/repodata is on a network/parallel filesystem (NFS/SMB/FUSE/BeeGFS/Lustre/GPFS/CephFS), redirected to /tmp/pixi-cache-gmich/repodata for this run. Set [cache.repodata] in config.toml or PIXI_CACHE_DIR to override, or [cache.netfs-redirect] = "never" to keep the original path.
+	Command being timed: "pixi run bedtools multiinter -names RoCCs, Cranio, GSM86, GSM87, GSM88, GSM89, GSM90 -header -i PhyloP_RoCC_output.txt prepped_Cranio_variants_sorted.tsv /projects/bgmp/shared/Bi623/ZoonomiaWorkshop/GSM7508786_CS18-12676-ATAC_peaks-q1.3.narrowPeak.gz /projects/bgmp/shared/Bi623/ZoonomiaWorkshop/GSM7508787_CS18-12695-ATAC_peaks-q1.3.narrowPeak.gz /projects/bgmp/shared/Bi623/ZoonomiaWorkshop/GSM7508788_CS19-12696-ATAC_peaks-q1.3.narrowPeak.gz /projects/bgmp/shared/Bi623/ZoonomiaWorkshop/GSM7508789_CS22-12498-ATAC_peaks-q1.3.narrowPeak.gz /projects/bgmp/shared/Bi623/ZoonomiaWorkshop/GSM7508790_CS23-12492-ATAC_peaks-q1.3.narrowPeak.gz"
+	User time (seconds): 1.87
+	System time (seconds): 4.30
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.23
+
+Output file is ~50 mb 
+wc -l part3_bedtools_output.tsv 
+1068590 part3_bedtools_output.tsv
+close to predicted output
+
+Sites with the most hits in col 4 (num) that have RoCCs and Cranio listed in column 5 (list) are likely of the most interest, since those ROCCs are observed on open chromatin as determined by ATAC-seq, further indicating functional importance. "Cranio" seems to have a lower frequency, which makes sense, given how few regions were in that file
+
+
 

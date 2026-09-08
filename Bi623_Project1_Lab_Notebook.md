@@ -133,7 +133,12 @@ wc -l part3_bedtools_output.tsv
 1068590 part3_bedtools_output.tsv
 close to predicted output
 
-Sites with the most hits in col 4 (num) that have RoCCs and Cranio listed in column 5 (list) are likely of the most interest, since those ROCCs are observed on open chromatin as determined by ATAC-seq, further indicating functional importance. "Cranio" seems to have a lower frequency, which makes sense, given how few regions were in that file
+Sites with the most hits in col 4 (num) that have RoCCs and Cranio listed in column 5 (list) are likely of the most interest, since those RoCCs are observed on open chromatin as determined by ATAC-seq, further indicating functional importance. "Cranio" seems to have a lower frequency, which makes sense, given how few regions were in that file.
+
+
+Part 4:
+Downloaded files to desktop for plotting
+
 
 
 

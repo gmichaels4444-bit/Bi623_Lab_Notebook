@@ -81,10 +81,6 @@ wc -l PhyloP_RoCC_output.txt
 wc -l PhyloP_RoCC_output_sorted.txt 
 595536 PhyloP_RoCC_output_sorted.txt
 correct length, properly sorted
-
-
-
-
 	
 Part 2
 
@@ -132,6 +128,23 @@ Output file is ~50 mb
 wc -l part3_bedtools_output.tsv 
 1068590 part3_bedtools_output.tsv
 close to predicted output
+
+resorted using sort -V
+wc -l test_part3_bedtools_output.tsv 
+1068593 test_part3_bedtools_output.tsv
+similar number
+
+resorted everything per bedtools' suggestion (no sort -V; so in chromosome chr1, chr 10-19, chr2.... order):
+wc -l test_part3_bedtools_output.tsv 
+1068593 test_part3_bedtools_output.tsv
+still off
+
+Issue due to sort command in R script for part 2; corrected and reran:
+
+wc -l part3_bedtools_output.tsv 
+1068691 part3_bedtools_output.tsv
+
+OUTPUT CORRECT
 
 Sites with the most hits in col 4 (num) that have RoCCs and Cranio listed in column 5 (list) are likely of the most interest, since those RoCCs are observed on open chromatin as determined by ATAC-seq, further indicating functional importance. "Cranio" seems to have a lower frequency, which makes sense, given how few regions were in that file.
 

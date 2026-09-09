@@ -148,6 +148,33 @@ OUTPUT CORRECT
 
 Sites with the most hits in col 4 (num) that have RoCCs and Cranio listed in column 5 (list) are likely of the most interest, since those RoCCs are observed on open chromatin as determined by ATAC-seq, further indicating functional importance. "Cranio" seems to have a lower frequency, which makes sense, given how few regions were in that file.
 
+Challenge:
+Downloaded datasets of cleft lip and associated traits' associated SNPs from European Bioinformatics Institute:
+https://www.ebi.ac.uk/gwas/efotraits/HP_0000202 (Referred to as orofacial going forward)
+https://www.ebi.ac.uk/gwas/efotraits/EFO_0003959 (Referred to as cleft lip going forward)
+
+Steps to prep for prepping for Multiinter:
+Selected Chromosome, Start site, Trait columns
+Removed NAs 
+renamed columns to match conventions of other files
+Reordered columns
+Added "chr" to the beginning of each chromosome entry
+Added Stop column (original files are for SNPs and lack this column)
+Order appears correct
+
+Reran Multiinter with these files added:
+Command being timed: "pixi run bedtools multiinter -names RoCCs Cranio GSM86 GSM87 GSM88 GSM89 GSM90 Orofacial Cleft -header -i sorted_pt3inputs/RoCCs.tsv sorted_pt3inputs/Cranio.tsv sorted_pt3inputs/GSM86.tsv sorted_pt3inputs/GSM87.tsv sorted_pt3inputs/GSM88.tsv sorted_pt3inputs/GSM89.tsv sorted_pt3inputs/GSM90.tsv sorted_pt3inputs/Orofacial.tsv sorted_pt3inputs/Cleft.tsv"
+	User time (seconds): 1.93
+	System time (seconds): 4.29
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.36
+	
+wc -l challenge_bedtools_multiinter_out.txt 
+1069474 challenge_bedtools_multiinter_out.txt
+
+-Only slightly longer than original file, which makes sense given the relatively small sizes of the added files and hopefully overlap with regions noted in other steps. 
+
+
 
 Part 4:
 Downloaded files to desktop for plotting

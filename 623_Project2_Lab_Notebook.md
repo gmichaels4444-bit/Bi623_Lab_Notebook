@@ -144,7 +144,6 @@ Took ~20 minutes
 output looks like a gtf file
 
 
-
 For STAR alignment, followed the same commands as Bi621 PS8 
 
 Had to run with 32 CPUs; memory issues otherwise
@@ -154,7 +153,6 @@ Output 2 .sam
 Mapped_counts.py adapted from PS8, with argparse added
 	removed filtering parameter i"f "K" in line"
 
-
 For HTSEQ command:
 -c for output file did not work, put ><outfile>
 
@@ -162,18 +160,64 @@ counting reads from htseq:
 sort <filename> | grep "ENSMUS" | awk '{sum+=$2}END{print sum}'
 
 
-
-
-
 Renamed files to:
 counts_SRR25630307_<forward or reverse>.txt became	Cco_com124_EO_6cm_1_htseqcounts_[forORrev]stranded.txt
 counts_SRR25630395_<forward or reverse>.txt became Crh_rhy115_EO_adult_2_htseqcounts_[forORrev]stranded.txt
 
 
+Part 4:
+Downloaded repo onto local computer. Used Bear analysis and linked bioconductor url as basis for much of the flow. 
+
+Used the following libraries:
+General:
+library(edgeR)
+library(limma)
+library(Glimma)
+library(ggplot2)
+library(RColorBrewer)
+library(DESeq2)
+library(apeglm)
+library(tidyverse)
+
+Heatmaps and dendrograms:
+library("pheatmap")
+library("RColorBrewer")
+library("PoiClaClu")
+
+PCA plots:
+library("glmpca")
+
+For PCA plots:
+https://master.bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html#pre-filtering-the-dataset
+Explained differences between approaches of plots.
+
+Single outlier noted in steps 5 and 6, Cco skeletal muscle sample that clusters with electric organ data
+found by adding "rcampy$SRRfile" to dendrogram, then used this to filter outlier (SRRfile!="SRR25630366").
+
+Q8:
+Only used comparisons of SM vs EO for each species. 
+
+For Results table and extracting contrasts:
+library(tidyverse)
+library("ashr")
+https://bioinformatics-core-shared-training.github.io/Bulk_RNAseq_Course_June24/Bulk_RNAseq_Course_Base/additional_scripts_and_materials/DESeq2_results_cheatsheet.pdf
 
 
+Used as instructions for volcano plot:
+https://dputhier.github.io/jgb71e-polytech-bioinfo-app/practical/rna-seq_R/rnaseq_diff_Snf2.html
+Inverted log fold change to have upregulated genes in skeletal muscle on the left and upregulated genes in the electric organ on the right of the volcano plot.
 
+Q9:
 
+Top candidates: (lowest mean adjusted p-values)
+maker-ptg000555l-snap-gene-1.19-mRNA-1	
+maker-ptg001270l-snap-gene-47.16-mRNA-1	
+maker-ptg000070l-snap-gene-5.18-mRNA-1
+snap_masked-ptg000102l-processed-gene-12.45-mRNA-1
+maker-ptg000361l-snap-gene-40.32-mRNA-1
 
+Top EO hit: (lowest mean log fold change)
+maker-ptg000521l-snap-gene-0.25-mRNA-1
 
-
+Top SM hit: (hightest mean log fold change)
+snap_masked-ptg001143l-processed-gene-2.56-mRNA-1

@@ -175,9 +175,18 @@ wc -l challenge_bedtools_multiinter_out.txt
 -Only slightly longer than original file, which makes sense given the relatively small sizes of the added files and hopefully overlap with regions noted in other steps. 
 
 
+Part 4: 
+Downloaded multiinter input files to desktop for plotting
 
-Part 4:
-Downloaded files to desktop for plotting
+
+
+For GWAS data, manually edited start and stop sites to make lengths 10 to make them show up on the plot. 
+
+Plotting:
+library(BiocManager)
+library(plotgardener)
+library(plyranges)
+library(grid)
 
 
 

@@ -68,7 +68,6 @@ TrimmomaticPE: Completed successfully
 	Percent of CPU this job got: 389%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:45.17
 
-
 However, cutadapt was not run with paired end setting, so I reran that first. 
 Example SLURM output:
 Command being timed: "pixi run cutadapt --pair-adapters -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -o ../cut_SRR25630307_1.fastq.gz -p ../cut_SRR25630307_2.fastq.gz ../../SRR25630307_1.fastq ../../SRR25630307_2.fastq"
@@ -92,7 +91,6 @@ TrimmomaticPE: Completed successfully
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:58.72
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
-
 
 Plotting:
 Used R on Talapas:
@@ -145,8 +143,14 @@ output looks like a gtf file
 
 
 For STAR alignment, followed the same commands as Bi621 PS8 
-
 Had to run with 32 CPUs; memory issues otherwise
+Example SLURM:
+Command being timed: "pixi run STAR --runThreadN 8 --runMode alignReads --outFilterMultimapNmax 3 --outSAMunmapped Within KeepPairs --alignIntronMax 1000000 --alignMatesGapMax 1000000 --readFilesCommand zcat --readFilesIn ../paired_SRR25630307_1.fastq.gz ../paired_SRR25630307_2.fastq.gz --genomeDir campylomormyrus_Dryad_STAR_2.7.11b --outFileNamePrefix SRR25630307"
+	User time (seconds): 1112.07
+	System time (seconds): 4.23
+	Percent of CPU this job got: 668%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:47.00
+
 
 Output 2 .sam
 
@@ -156,9 +160,15 @@ Mapped_counts.py adapted from PS8, with argparse added
 For HTSEQ command:
 -c for output file did not work, put ><outfile>
 
+Example SLURM output:
+Command being timed: "htseq-count -i Parent --stranded=reverse SRR25630395Aligned.out.sam campylomormyrus.gff"
+	User time (seconds): 994.83
+	System time (seconds): 2.71
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:44.66
+
 counting reads from htseq:
 sort <filename> | grep "ENSMUS" | awk '{sum+=$2}END{print sum}'
-
 
 Renamed files to:
 counts_SRR25630307_<forward or reverse>.txt became	Cco_com124_EO_6cm_1_htseqcounts_[forORrev]stranded.txt

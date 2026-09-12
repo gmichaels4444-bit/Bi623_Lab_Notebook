@@ -180,7 +180,7 @@ Downloaded multiinter input files to desktop for plotting
 
 
 
-For GWAS data, manually edited start and stop sites to make lengths 10 to make them show up on the plot. 
+For GWAS data, manually edited start and stop sites to convert SNPs to 10 bp to make them show up on the plot. 
 
 Plotting:
 library(BiocManager)

@@ -175,18 +175,53 @@ wc -l challenge_bedtools_multiinter_out.txt
 -Only slightly longer than original file, which makes sense given the relatively small sizes of the added files and hopefully overlap with regions noted in other steps. 
 
 
-Part 4: 
-Downloaded multiinter input files to desktop for plotting
-
-
-
-For GWAS data, manually edited start and stop sites to convert SNPs to 10 bp to make them show up on the plot. 
-
-Plotting:
+Part 4: plotgardener
+Data filtering and Plotting packages used:
 library(BiocManager)
 library(plotgardener)
 library(plyranges)
 library(grid)
+library("grid")
+library("tidyverse")
+library("dplyr")
+
+Note: "Cranio" data set is clinical variants, also known as "ClinVars" in the assignment. Both are used here. 
+
+Downloaded multiinter input files to desktop for plotting
+Filtered Multiinter output for sites where ClinVars and Orofacial or Cleft sites overlapped
+	No results
+
+Filtered for sites where "RoCCs" and "Orofacial" GWAS challenge set overlapped
+	Orofacial and Cleft datasets had significant overlap, so only 1 selected for simplicity.
+
+Searched multiinter file visually at the sites returned:
+
+Originally elected the region of chr11 Start site 66049234-66052490 (3256 bp), since this region included ClinVars and much of the epigenetic data.
+However, to plot the challenge data, I decided to use the region surrounding chr12 56041522-56042305 (783 bp), since this also included the cleft and orofacial SNPs.
+	I decided to add on additional bases on each end to be over 1kb plotted. 
+Final choice:chr9 109013383-109015185; 1802 bases (no clinvars present)
+	Only region with region in RoCCs and cleft palate/orofacial datasets with significant epigenetics hits
+	however, no clinvars in this region
+
+Data manipulation for plotgardener:
+For GWAS data, manually edited start and stop sites to convert SNPs to 10 bp to make them show up on the plot. 
+Had to cut 4th column from Cranio.tsv file.
+
+Plotgardener instructions page for gene track:
+https://phanstiellab.github.io/plotgardener/reference/plotGenes.html
+
+
+Read RoCCs, Cranio, Orofacial, Cleft datasets in as bed files after reformatting due to them matching this format. 
+Read epigenetics files in as read_narrowpeaks()
+
+Used hg38 genome, as this was used as the genome in all of the datasets. 
+Selected purple color gradient for epigenetics datasets and red for challenge datasets for cleft palate SNPs.
+RoCCs were blue to differentiate from other datasets. 
+
+Within the region, epigenetics datasets overlapped on CTNNAL1 gene.
+RoCCs and cleft/orofacial overlapped separately on a different gene ~1.5 kb downstream of CTNNAL1 gene.
+
+
 
 
 
